@@ -16,11 +16,12 @@ namespace SpecificationTextToTestConverter
                 return string.Empty;
             }
 
-            string className = lines.First().Reformat();
+            string firstLine = lines.First();
+            string className = firstLine.Reformat();
 
             var nUnitCode = new StringBuilder();
 
-            nUnitCode.AppendFormat("#region {0}", className);
+            nUnitCode.AppendFormat("#region {0}", firstLine);
             nUnitCode.AppendLine();
             nUnitCode.AppendLine();
 
