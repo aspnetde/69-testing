@@ -25,8 +25,10 @@ namespace SpecificationTextToTestConverter
         {
             if (e.Key == Key.Enter)
             {
-                input.Text += Environment.NewLine + "    - ";
-                input.CaretIndex = input.Text.Length;
+                int remainingCharactersToEnd = input.Text.Length - input.CaretIndex;
+
+                input.Text = input.Text.Insert(input.CaretIndex, Environment.NewLine + "    - ");
+                input.CaretIndex = input.Text.Length - remainingCharactersToEnd;
                 e.Handled = true;
             }
         }
