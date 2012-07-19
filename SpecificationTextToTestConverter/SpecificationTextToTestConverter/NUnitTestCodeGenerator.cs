@@ -28,7 +28,7 @@ namespace SpecificationTextToTestConverter
             nUnitCode.AppendFormat("public class {0}{1}", className, Environment.NewLine);
             nUnitCode.AppendLine("{");
 
-            bool isFirst = true;
+            bool isOnlyFixtureWithoutTests = true;
             foreach (var line in lines.Skip(1))
             {
                 string reformattedLine = line.Reformat();
@@ -37,11 +37,11 @@ namespace SpecificationTextToTestConverter
                     continue;
                 }
 
-                if (!isFirst)
+                if (!isOnlyFixtureWithoutTests)
                 {
                     nUnitCode.AppendLine();
                 }
-                isFirst = false;
+                isOnlyFixtureWithoutTests = false;
 
                 reformattedLine = reformattedLine[0].ToString().ToUpper()
                     + reformattedLine.Substring(1, reformattedLine.Length - 1);
@@ -51,6 +51,11 @@ namespace SpecificationTextToTestConverter
                 nUnitCode.AppendLine("    {");
                 nUnitCode.AppendLine("        ");
                 nUnitCode.AppendLine("    }");
+            }
+
+            if (isOnlyFixtureWithoutTests)
+            {
+                nUnitCode.AppendLine("    ");
             }
 
             nUnitCode.AppendLine("}");

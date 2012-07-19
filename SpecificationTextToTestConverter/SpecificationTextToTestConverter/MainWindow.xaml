@@ -28,10 +28,10 @@
         </DockPanel>
 
         <TextBox Grid.Column="0" Grid.Row="1" FontFamily="Consolas" FontSize="10pt" x:Name="input" Margin="5" AcceptsReturn="True"
-                 TextChanged="input_TextChanged" PreviewKeyUp="input_PreviewKeyUp"
+                 TextChanged="input_TextChanged" PreviewKeyDown="input_PreviewKeyDown"
                  ScrollViewer.VerticalScrollBarVisibility="Auto">            
         </TextBox>
         <TextBox Grid.Column="1" Grid.Row="1"  FontFamily="Consolas" FontSize="10pt"  x:Name="output" Margin="5" AcceptsReturn="True"
-                 ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+                 ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"></TextBox>
     </Grid>
 </Window>
