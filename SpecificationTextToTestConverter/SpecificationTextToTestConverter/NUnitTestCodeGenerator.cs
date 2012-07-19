@@ -53,7 +53,7 @@ namespace SpecificationTextToTestConverter
                 nUnitCode.AppendFormat("    public void {0}()", reformattedLine);
                 nUnitCode.AppendLine();
                 nUnitCode.AppendLine("    {");
-                nUnitCode.AppendLine("        ");
+                nUnitCode.AppendLine("        throw new NotImplementedException();");
                 nUnitCode.AppendLine("    }");
             }
 
