@@ -20,12 +20,14 @@ namespace SpecificationTextToTestConverter
 
             var nUnitCode = new StringBuilder();
 
-            nUnitCode.AppendFormat("#region {0}{1}", className, Environment.NewLine);
+            nUnitCode.AppendFormat("#region {0}", className);
+            nUnitCode.AppendLine();
             nUnitCode.AppendLine();
 
             nUnitCode.AppendLine("[TestFixture]");
             nUnitCode.AppendLine(@"[Category("""")]");
-            nUnitCode.AppendFormat("public class {0}{1}", className, Environment.NewLine);
+            nUnitCode.AppendFormat("public class {0}", className);
+            nUnitCode.AppendLine();
             nUnitCode.AppendLine("{");
 
             bool isOnlyFixtureWithoutTests = true;
@@ -47,7 +49,8 @@ namespace SpecificationTextToTestConverter
                     + reformattedLine.Substring(1, reformattedLine.Length - 1);
 
                 nUnitCode.AppendLine("    [Test]");
-                nUnitCode.AppendFormat("    public void {0}(){1}", reformattedLine, Environment.NewLine);
+                nUnitCode.AppendFormat("    public void {0}()", reformattedLine);
+                nUnitCode.AppendLine();
                 nUnitCode.AppendLine("    {");
                 nUnitCode.AppendLine("        ");
                 nUnitCode.AppendLine("    }");
