@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationTextToTestConverter", "SpecificationTextToTestConverter\SpecificationTextToTestConverter.csproj", "{ACD2F9AD-88A0-46CA-B03D-C54089430A50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACD2F9AD-88A0-46CA-B03D-C54089430A50}.Debug|x86.ActiveCfg = Debug|x86
+		{ACD2F9AD-88A0-46CA-B03D-C54089430A50}.Debug|x86.Build.0 = Debug|x86
+		{ACD2F9AD-88A0-46CA-B03D-C54089430A50}.Release|x86.ActiveCfg = Release|x86
+		{ACD2F9AD-88A0-46CA-B03D-C54089430A50}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
