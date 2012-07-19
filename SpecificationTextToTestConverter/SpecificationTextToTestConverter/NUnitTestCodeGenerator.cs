@@ -74,11 +74,17 @@ namespace SpecificationTextToTestConverter
         {
             return source
                 .Trim()
-                .RemoveIllegalCharacters()
+                .RemoveHyphens()
+                .ReplaceIllegalCharactersBySpaces()
                 .ReplaceMultipleSpacesBySingle()
                 .Replace(" ", "_")
                 .ReplaceMultipleUnderscoresBySingle()
                 .Trim('_');
+        }
+
+        private static string RemoveHyphens(this string source)
+        {
+            return source.Replace("-", string.Empty);
         }
 
         private static string ReplaceMultipleSpacesBySingle(this string source)
@@ -86,7 +92,7 @@ namespace SpecificationTextToTestConverter
             return Regex.Replace(source, "[ ]+", " ", RegexOptions.IgnoreCase);
         }
 
-        private static string RemoveIllegalCharacters(this string source)
+        private static string ReplaceIllegalCharactersBySpaces(this string source)
         {
             return Regex.Replace(source, "[^a-z0-9äöüß_]", " ", RegexOptions.IgnoreCase);
         }
