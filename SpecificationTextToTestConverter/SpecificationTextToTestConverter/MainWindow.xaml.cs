@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -20,12 +21,13 @@ namespace SpecificationTextToTestConverter
             output.Text = NUnitTestCodeGenerator.GenerateCode(specification);
         }
 
-        private void input_PreviewKeyUp(object sender, KeyEventArgs e)
+        private void input_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                input.Text += "    - ";
+                input.Text += Environment.NewLine + "    - ";
                 input.CaretIndex = input.Text.Length;
+                e.Handled = true;
             }
         }
 
