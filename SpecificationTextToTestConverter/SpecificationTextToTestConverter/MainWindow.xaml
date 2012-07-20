@@ -27,11 +27,17 @@
             </StackPanel>
         </DockPanel>
 
-        <TextBox Grid.Column="0" Grid.Row="1" FontFamily="Consolas" FontSize="10pt" x:Name="input" Margin="5" AcceptsReturn="True"
+        <TextBox Grid.Column="0" Grid.Row="1" FontSize="10pt" x:Name="input" Margin="5" AcceptsReturn="True"
                  TextChanged="input_TextChanged" PreviewKeyDown="input_PreviewKeyDown"
                  ScrollViewer.VerticalScrollBarVisibility="Auto">            
         </TextBox>
-        <TextBox Grid.Column="1" Grid.Row="1"  FontFamily="Consolas" FontSize="10pt"  x:Name="output" Margin="5" AcceptsReturn="True"
-                 ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"></TextBox>
+        <RichTextBox Grid.Column="1" Grid.Row="1" x:Name="richOutput" FontFamily="Consolas" FontSize="10pt"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" Margin="5">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
     </Grid>
 </Window>
