@@ -29,10 +29,10 @@
 
         <TextBox Grid.Column="0" Grid.Row="1" FontSize="10pt" x:Name="input" Margin="5" AcceptsReturn="True"
                  TextChanged="input_TextChanged" PreviewKeyDown="input_PreviewKeyDown"
-                 ScrollViewer.VerticalScrollBarVisibility="Auto">            
+                 TextOptions.TextFormattingMode="Display" ScrollViewer.VerticalScrollBarVisibility="Auto">            
         </TextBox>
         <RichTextBox Grid.Column="1" Grid.Row="1" x:Name="richOutput" FontFamily="Consolas" FontSize="10pt"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" Margin="5">
+                     TextOptions.TextFormattingMode="Display" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" Margin="5">
             <RichTextBox.Resources>
                 <Style TargetType="{x:Type Paragraph}">
                     <Setter Property="Margin" Value="0"/>
