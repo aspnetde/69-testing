@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace SpecificationTextToTestConverter
@@ -18,7 +19,7 @@ namespace SpecificationTextToTestConverter
         private void input_TextChanged(object sender, TextChangedEventArgs e)
         {
             string specification = input.Text;
-            output.Text = NUnitTestCodeGenerator.GenerateCode(specification);
+            richOutput.Document = NUnitTestCodeGenerator.GenerateCode(specification);
         }
 
         private void input_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -35,9 +36,10 @@ namespace SpecificationTextToTestConverter
 
         private void copyToClipboard_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(output.Text);
-            output.Focus();
-            output.Select(0, output.Text.Length);
+            string text = new TextRange(richOutput.Document.ContentStart, richOutput.Document.ContentEnd).Text.Trim();
+            Clipboard.SetText(text);
+            richOutput.Focus();
+            richOutput.SelectAll();
         }
     }
 }
