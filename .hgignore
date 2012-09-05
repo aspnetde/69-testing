@@ -23,10 +23,8 @@ syntax: glob
 *.sbr
 *.scc
 *.orig
-[Bb]in
 [Dd]ebug*/
 obj/
-[Rr]elease*/
 _ReSharper*/
 [Tt]humbs.db
 [Tt]est[Rr]esult*
