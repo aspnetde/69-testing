@@ -14,6 +14,8 @@ namespace SpecificationTextToTestConverter
         public MainWindow()
         {
             InitializeComponent();
+
+            input.Focus();
         }
 
         private void input_TextChanged(object sender, TextChangedEventArgs e)
